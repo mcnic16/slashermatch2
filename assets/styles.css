@@ -47,7 +47,7 @@ body {
 }
 /*----------- toggling cards ----------*/
 .front {
-    transform: rotateY(90deg);
+    transform: rotateY(180deg);
   }      
   .toggleCard {
     transform: rotateY(180deg);
