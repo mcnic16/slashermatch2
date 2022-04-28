@@ -7,7 +7,7 @@ const same = 0;
 paired.textContent = same;
 
 // game pictures
-const gameData = () => [
+const pictures = () => [
     {imgsrc: "assets/images/1.jpg", name: "1"},
     {imgsrc: "assets/images/2.jpg", name: "2"},
     {imgsrc: "assets/images/chucky.jpg", name: "chucky"},
@@ -26,3 +26,45 @@ const gameData = () => [
     {imgsrc: "assets/images/scream.jpg", name: "scream"},
 ];
  
+// Random Cards
+const shuffle = () => {
+    const slasherData = pictures();
+    slasherData.sort(() => Math.random() -0.5);
+    return slasherData;
+   };
+ 
+ 
+ 
+// card data
+
+const cards = () => {
+const slasherData = shuffle ();
+   
+// html data
+
+slasherData.forEach((item) => {
+const slasherCard = document.createElement('div');
+const front = document.createElement('img');
+const back = document.createElement('div');
+slasherCard.classList = "slasherCard";
+front.classList = "front";
+back.classList = "back";
+
+// adding pictures onto the cards
+
+front.src = item.imgsrc;
+slasherCard.setAttribute('name', item.name);
+section.appendChild(slasherCard);
+slasherCard.appendChild(front);
+slasherCard.appendChild(back);
+ 
+slasherCard.addEventListener("click", (e) => {
+    slasherCard.classList.toggle("toggleCard");
+    checkCards(e);
+ 
+   
+});
+});
+};
+
+cards();
