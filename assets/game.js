@@ -67,5 +67,36 @@ slasherCard.addEventListener("click", (e) => {
 });
 };
 
+// checkCards
+
+const checkCards = (e) => {
+    console.log(e);
+    const clickedCard = e.target;
+    clickedCard.classList.add("flipped");
+    const flippedCards = document.querySelectorAll('.flipped');
+    
+    //To check if cards match
+
+if(flippedCards.length === 2) {
+   if (
+   flippedCards[0].getAttribute('name') ===
+   flippedCards[1].getAttribute('name')
+   ) {
+       console.log("correct");
+       flippedCards.forEach((slasherCard) => {
+           slasherCard.classList.remove("flipped");
+           slasherCard.style.pointerEvents = "none";
+       });
+   } else {
+       console.log ("try again");
+       flippedCards.forEach((slasherCard) => {
+           slasherCard.classList.remove('flipped');
+           setTimeout(() => slasherCard.classList.remove("toggleCard"), 1000);
+       });
+
+   }
+};
+};
+
 cards();
 
