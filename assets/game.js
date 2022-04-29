@@ -138,6 +138,9 @@ const checkCards = (e) => {
             });
             same++;
             paired.textContent = same;
+            if(paired === 8) {
+                restart();
+            };
         } else {
             console.log("try again");
             flippedCards.forEach((slasherCard) => {
@@ -149,4 +152,21 @@ const checkCards = (e) => {
     };
 };
 
+
+// Restart the game
+
+const restart = () => {
+    var slasherData = shuffle ();
+    var newFront = document.querySelectorAll(".front");
+    var newCards = document.querySelectorAll(".slasherCard");
+    slasherData.forEach((item, index) => {
+        newCards[index].classList.remove("toggleCard");
+    });
+    same = 0;
+    paired.textContent = same;
+
+};
+
+
 cards();
+
