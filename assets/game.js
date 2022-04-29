@@ -34,7 +34,7 @@ const pictures = () => [{
     },
     {
         imgsrc: "assets/images/pennywise.jpg",
-        name: "1pennywise"
+        name: "pennywise"
     },
     {
         imgsrc: "assets/images/scream.jpg",
@@ -66,7 +66,7 @@ const pictures = () => [{
     },
     {
         imgsrc: "assets/images/pennywise.jpg",
-        name: "1pennywise"
+        name: "pennywise"
     },
     {
         imgsrc: "assets/images/scream.jpg",
@@ -138,9 +138,12 @@ const checkCards = (e) => {
             });
             same++;
             paired.textContent = same;
-            if(paired === 8) {
+
+            if(same === 9) {
                 restart();
-            };
+        };
+            
+            
         } else {
             console.log("try again");
             flippedCards.forEach((slasherCard) => {
@@ -161,12 +164,23 @@ const restart = () => {
     var newCards = document.querySelectorAll(".slasherCard");
     slasherData.forEach((item, index) => {
         newCards[index].classList.remove("toggleCard");
+   
+        // Reshuffle cards
+        setTimeout (() => {
+        newCards[index].style.pointerEvents = "all";
+        newFront[index].src = item.imgsrc;
+        newCards[index].setAttribute("name", item.name);
+        },1000);
     });
     same = 0;
     paired.textContent = same;
 
 };
 
+function newGame()
+    {
+        restart();
+    }
 
 cards();
 
