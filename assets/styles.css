@@ -19,13 +19,22 @@ body {
 }
 
 /*-------------------------game-grid------------------*/
+.gamebutton {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.title {
+    height: auto;
+}
 
 section {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4, 8rem);
     grid-template-rows: repeat(4, 8rem);
     grid-gap: 1rem;
     perspective: 1000px;
+    
 }
 
 /*-------------------------cards------------------*/
@@ -57,20 +66,18 @@ section {
 }
 
 /*-------------------------media-querys------------*/
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
     
     body {
-        align-items: flex-start;
+        align-items: center;
         max-width: 100%;
-         max-height: 100%;
-        
-        
-        
-    }
+        max-height: 100%;
+        }
 
     section {
+        margin-top: 20px ;
         display: grid;
-        grid-template-columns: repeat(4, 5rem);
+        grid-template-columns: repeat(4, 4rem);
         grid-template-rows: repeat(4, 5rem);
         grid-gap: 1rem;
         perspective: 1000px;
