@@ -139,11 +139,11 @@ const checkCards = (e) => {
             same++;
             paired.textContent = same;
 
-            if(same === 9) {
-                restart();
-        };
-            
-            
+            if (same === 9) {
+                restart("You Win");
+            };
+
+
         } else {
             console.log("try again");
             flippedCards.forEach((slasherCard) => {
@@ -159,28 +159,26 @@ const checkCards = (e) => {
 // Restart the game
 
 const restart = () => {
-    var slasherData = shuffle ();
+    var slasherData = shuffle();
     var newFront = document.querySelectorAll(".front");
     var newCards = document.querySelectorAll(".slasherCard");
     slasherData.forEach((item, index) => {
         newCards[index].classList.remove("toggleCard");
-   
+
         // Reshuffle cards
-        setTimeout (() => {
-        newCards[index].style.pointerEvents = "all";
-        newFront[index].src = item.imgsrc;
-        newCards[index].setAttribute("name", item.name);
-        },1000);
+        setTimeout(() => {
+            newCards[index].style.pointerEvents = "all";
+            newFront[index].src = item.imgsrc;
+            newCards[index].setAttribute("name", item.name);
+        }, 1000);
     });
     same = 0;
     paired.textContent = same;
 
 };
 
-function newGame()
-    {
-        restart();
-    }
+function newGame() {
+    restart();
+}
 
 cards();
-
