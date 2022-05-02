@@ -13,20 +13,19 @@ body {
     flex-direction: column;
 }
 
-/*---------------------------- header--------------*/
+/*----------------------------text--------------*/
 .match {
     color: red;
 }
 
-/*-------------------------game-grid------------------*/
+/*-------------------button----------------------*/
+
 .gamebutton {
     margin-top: 20px;
     margin-left: 40px;
 }
-.title {
-    height: auto;
-}
 
+/*-------------------------game-grid------------------*/
 section {
     margin-top: 20px;
     display: grid;
@@ -77,8 +76,8 @@ section {
     section {
         margin-top: 20px ;
         display: grid;
-        grid-template-columns: repeat(4, 4rem);
-        grid-template-rows: repeat(4, 5rem);
+        grid-template-columns: repeat(4, 3rem);
+        grid-template-rows: repeat(4, 4rem);
         grid-gap: 1rem;
         perspective: 1000px;
         
