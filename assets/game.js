@@ -1,4 +1,4 @@
-// Grabbibng HTML
+// Grabbing HTML
 
 const section = document.querySelector('section');
 const paired = document.querySelector('span');
@@ -115,7 +115,7 @@ const cards = () => {
     });
 };
 
-// checkCards
+// Checking Cards
 
 const checkCards = (e) => {
     console.log(e);
@@ -176,6 +176,8 @@ const restart = () => {
     paired.textContent = same;
 
 };
+
+// New game
 
 function newGame() {
     restart();
