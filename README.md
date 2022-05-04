@@ -82,9 +82,9 @@ This game has been checked on various phones, tablets, a laptop and a desktop.
 When I first coded this game, all the pictures were in HTML and there was a Slasher Match logo on
 the back of the cards. Doing it this way caused trouble when getting the cards to flip, so I altered the code for the pictures to be in Javascript. This solved the issue.
 
-I also had problems with getting CSS working in the browser when altering the CSS code. I had two previous repositories of slashermatch and slashermatch1 which all have git commits on them. In order to rectify, I completed a hard reset and emptied the cache on numerous occasions. The problems have persisted but on this repository everything is in working order.
+I also had problems with getting CSS working in the browser when altering the CSS code. I had two previous repositories of slashermatch and slashermatch1 which all have git commits on them. In order to rectify, I completed a hard reset and emptied the cache on numerous occasions. The problems persisted but on this repository everything is in working order.
 
-When all matches had been completed, the very last card would not turn over. To rectify this, I added a new game button. This now gives the player the ability to restart the game when they choose and also removed the issue with the last card.
+When all matches had been completed, the very last card would not turn over. To rectify this, I added a settimeout function for half a second when it checks if you have 8 pairs. 
 
 When you restarting a game, the cards would reshuffle before they flipped back over causing the player to see where all the matches were.  I added a settimeout function within the restart function to remedy this issue.
 
