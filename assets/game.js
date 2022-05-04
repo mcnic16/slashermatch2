@@ -176,7 +176,7 @@ const restart = () => {
             newFront[index].src = item.imgsrc;
             newCards[index].setAttribute("name", item.name);
             section.style.pointerEvents = "all";
-        }, 2000);
+        }, 5000);
     });
     same = 0;
     paired.textContent = same;
