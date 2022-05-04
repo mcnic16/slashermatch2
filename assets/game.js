@@ -139,8 +139,12 @@ const checkCards = (e) => {
             same++;
             paired.textContent = same;
 
-            if (same === 9) {
-                restart("You Win");
+            if (same === 8) {
+                setTimeout(() => {
+                    restart("You Win");
+                    alert("You Win!")
+                }, 500);
+
             };
 
 
@@ -162,6 +166,7 @@ const restart = () => {
     var slasherData = shuffle();
     var newFront = document.querySelectorAll(".front");
     var newCards = document.querySelectorAll(".slasherCard");
+    section.style.pointerEvents = "none";
     slasherData.forEach((item, index) => {
         newCards[index].classList.remove("toggleCard");
 
@@ -170,7 +175,8 @@ const restart = () => {
             newCards[index].style.pointerEvents = "all";
             newFront[index].src = item.imgsrc;
             newCards[index].setAttribute("name", item.name);
-        }, 1000);
+            section.style.pointerEvents = "all";
+        }, 2000);
     });
     same = 0;
     paired.textContent = same;
